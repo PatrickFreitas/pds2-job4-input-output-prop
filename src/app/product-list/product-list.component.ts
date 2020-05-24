@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { ProductComponent } from '../product/product.component';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-product-list',
@@ -8,15 +7,22 @@ import { ProductComponent } from '../product/product.component';
 })
 export class ProductListComponent implements OnInit {
 
-  products: ProductComponent[];
+  products: any = [
+    {id: 1, desc: 'caneta'},
+    {id: 2, desc: 'caderno'},
+    {id: 3, desc: 'revista'},
+    {id: 4, desc: 'livro'},
+  ];
+
+  @Output() productAdded = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  public onMudouValor(evento) {
-    console.log("Valor obtido no componente pai: " + evento.novoValor);
+  public addProduct(evento) {
+    this.productAdded.emit({product: this});
   }
 
 }
