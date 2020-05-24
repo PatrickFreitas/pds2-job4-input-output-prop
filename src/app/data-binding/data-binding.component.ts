@@ -6,7 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./data-binding.component.css']
 })
 export class DataBindingComponent implements OnInit {
+  
+  nomeDoCurso: string = 'Angular';
 
+  public onMudouValor(evento) {
+    console.log("Valor obtido no componente pai: " + evento.novoValor);
+  }
+  
   constructor() { }
 
   ngOnInit() {
