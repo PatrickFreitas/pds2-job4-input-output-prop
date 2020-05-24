@@ -21,8 +21,8 @@ export class ProductListComponent implements OnInit {
   ngOnInit() {
   }
 
-  public addProduct(evento) {
-    this.productAdded.emit({product: this});
+  public addProduct(product) {
+    this.productAdded.emit({product: product});
   }
 
 }

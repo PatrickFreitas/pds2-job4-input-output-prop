@@ -1,3 +1,1 @@
-<ul *ngFor="let product of products">
-  <li>{{product.id}} - {{product.name}} - <button> Add </button> </li>
-</ul>
+<p *ngFor="let product of products"> {{product.id}} - {{product.desc}} - <button (click)="addProduct(product)"> Add </button> </p>
